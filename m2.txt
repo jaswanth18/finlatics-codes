@@ -1,0 +1,21 @@
+def func2(x,y):
+    s=[]
+    c=False
+    for i in range(len(x)):
+        if x[i]=="1":
+            d=len(x)-1-i
+            p="1"+"0"*d
+            if int(p)==10000:
+                c=True
+            else:
+                s.append(int(p))
+    s.sort()
+    for i in range(len(s)):
+        s[i]=y[s[i]]
+    if c:
+    
+        return list(reversed(s))
+    return s
+def func(n):
+    return func2(bin(n).replace("0b",""),{1:"pop",10:"double rip",100:"hide your mints",1000:"fall"})
+print(func(int(input())))
